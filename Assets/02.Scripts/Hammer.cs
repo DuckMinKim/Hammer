@@ -30,13 +30,10 @@ public class Hammer : MonoBehaviour
 
     void Update()
     {
-        //if (IsPointerOverUI()) return;
-        //Vector3 mousePos = Input.mousePosition;
         Vector3 mousePos = AdjustMousePositionForSimulator(Input.mousePosition);
-        mousePos.z = Camera.main.nearClipPlane + 10f; // nearClipPlane���� ��¦ ������ ����
+        mousePos.z = Camera.main.nearClipPlane + 10f; // nearClipPlane
         point = Camera.main.ScreenToWorldPoint(mousePos);
 
-        //point = Camera.main.ScreenToWorldPoint((Input.mousePosition)) + new Vector3(0, 0, 10);
 
 
         Collider2D col2d = Physics2D.OverlapCircle(point, radius, playerLayerMask);
@@ -57,8 +54,6 @@ public class Hammer : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && count > 0 )
         {
-            //GameObject _hammer = Instantiate(hammer, point, Quaternion.identity);
-            //Destroy(_hammer, 0.5f);
             GameObject _nail = Instantiate(nail, point, Quaternion.identity);
 
             if(testBox != null)
@@ -70,16 +65,12 @@ public class Hammer : MonoBehaviour
         if(nailCol2d != null && Input.GetMouseButtonDown(1))
         {
             Destroy(nailCol2d.gameObject);
-            //nailCol2d.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         }
 
         if(glassCol2d != null && Input.GetMouseButtonDown(0))
         {
             glassCol2d.GetComponent<Glass>().Breaking();
             SoundManager.Instance.PlaySound(breakClip);
-
-            //if (testBox != null)
-            //    AttachBox(glassCol2d.gameObject, testBox);
         }
 
         countText.text = "Count: " + count;
@@ -94,25 +85,25 @@ public class Hammer : MonoBehaviour
     }
     void AttachBox(GameObject _nail, Collider2D box)
     {
-        _nail.transform.SetParent(box.transform);
+        _nail.transform.SetParent(box.transform.GetChild(0));
 
         HingeJoint2D hinge = box.AddComponent<HingeJoint2D>();
         hinge.connectedBody = _nail.GetComponent<Rigidbody2D>();
 
-        hinge.anchor = _nail.transform.localPosition;   //transform.InverseTransformPoint();
+        //hinge.anchor = _nail.transform.localPosition;
+        hinge.anchor = box.transform.InverseTransformPoint(_nail.transform.position);
+
         //hinge.useLimits = false; 
     }
 
     private bool IsPointerOverUI()
     {
-        // ���콺(PC)���� ��ư�� Ŭ���ߴ��� Ȯ��
         if (EventSystem.current.IsPointerOverGameObject())
         {
             GameObject go = EventSystem.current.currentSelectedGameObject;
-            return go != null && go.GetComponent<Button>() != null; // ��ư���� Ȯ��
+            return go != null && go.GetComponent<Button>() != null; 
         }
 
-        // ����� ��ġ���� ��ư�� Ŭ���ߴ��� Ȯ��
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);

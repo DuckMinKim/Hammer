@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             anim.SetBool("isJump?", true);
 
             SoundManager.Instance.PlaySound(jumpClip);
-            j = 0;
+
             j = jumpPower;
         }
         else if (isGrounded)
@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
             anim.SetBool("isGrounded?", false);
             anim.SetBool("isJump?", false);
         }
+
         rb2.linearVelocity = new Vector2(h * moveSpeed, j * jumpPower);
     }
 
