@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class MobileController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
 
-    public Player player; // 플레이어 스크립트
+    public Player player;
 
     void Start()
     {

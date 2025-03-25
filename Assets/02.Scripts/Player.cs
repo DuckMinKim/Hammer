@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
         jumpPower = 0;
         anim.SetBool("isDead?", true);
         yield return new WaitForSeconds(waitTime);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void OnDrawGizmos()

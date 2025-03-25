@@ -6,11 +6,16 @@ public class Clear : MonoBehaviour
 {
     [SerializeField] LoadImage ldImg;
     [SerializeField] float waitTime;
-    [SerializeField] int sceneIndex;
+    int sceneIndex;
     [SerializeField] AudioClip clearClip;
     void Start()
     {
-        
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            sceneIndex = nextSceneIndex;
+        }else
+            sceneIndex = 0;
     }
 
 
