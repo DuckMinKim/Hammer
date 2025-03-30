@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Threading.Tasks;
 using UnityEditor.SearchService;
+using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -15,7 +16,9 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask groundLayerMask;
 
     [SerializeField] Vector3 offset;
+    [SerializeField] Vector3 pushOffset;
     [SerializeField] float groundCheckRadius;
+    [SerializeField] Vector2 groundCheckSize;
 
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpPower;
@@ -24,6 +27,7 @@ public class Player : MonoBehaviour
 
     float h, v, j;
     bool isGrounded;
+    bool isPushing;
 
     [SerializeField] AudioClip jumpClip;
     [SerializeField] AudioClip deadClip;
@@ -50,8 +54,12 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapCircle(transform.position + offset, groundCheckRadius, groundLayerMask);
+
+        //isGrounded = Physics2D.OverlapCircle(transform.position + offset, groundCheckRadius, groundLayerMask);
+        isGrounded = Physics2D.OverlapCapsule(transform.position + offset, groundCheckSize, CapsuleDirection2D.Horizontal,0, groundLayerMask);
+        isPushing = Physics2D.OverlapCircle(transform.position + pushOffset * h, groundCheckRadius, groundLayerMask);
         
+        anim.SetBool("isPushing?", isPushing);
 
         if (isGrounded && Input.GetButton("Jump"))
         {
@@ -64,7 +72,7 @@ public class Player : MonoBehaviour
         }
         else if (isGrounded)
         {
-            j = 0;
+            j = -1;
             anim.SetBool("isGrounded?", true);
         }
         else
@@ -94,7 +102,9 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position + offset, groundCheckRadius);
+        Gizmos.DrawWireSphere(transform.position + pushOffset, groundCheckRadius);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position + offset, groundCheckSize);
 
     }
 
@@ -110,5 +120,5 @@ public class Player : MonoBehaviour
         this.h = h;
     }
     
-
+    
 }

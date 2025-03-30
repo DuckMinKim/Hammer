@@ -1319,8 +1319,8 @@ Transform:
   m_GameObject: {fileID: 472852567}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7542, y: 5.874, z: 0}
-  m_LocalScale: {x: 6.6452684, y: 7.20271, z: 1}
+  m_LocalPosition: {x: -9.1104, y: 5.874, z: 0}
+  m_LocalScale: {x: 21.357893, y: 7.20271, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1587,7 +1587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6467418201706460060, guid: 2820f54689295824a93aef0e0feea972, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.12
+      value: -3.41
       objectReference: {fileID: 0}
     - target: {fileID: 6467418201706460060, guid: 2820f54689295824a93aef0e0feea972, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2852,7 +2852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6467418201706460060, guid: 2820f54689295824a93aef0e0feea972, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.12
+      value: -0.52
       objectReference: {fileID: 0}
     - target: {fileID: 6467418201706460060, guid: 2820f54689295824a93aef0e0feea972, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3031,8 +3031,8 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 1088
-  offset: {x: -0.05, y: -0.96, z: 0}
-  groundCheckRadius: 0.58
+  offset: {x: -0.05, y: -1.03, z: 0}
+  groundCheckRadius: 0.52
   moveSpeed: 8
   jumpPower: 5
   gravity: 15
