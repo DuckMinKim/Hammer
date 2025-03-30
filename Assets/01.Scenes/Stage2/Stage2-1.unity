@@ -3199,9 +3199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01de19dc42bf2614fbe3e3ff44dd467a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.27288178, g: 0.3372549, b: 0.21960784, a: 1}
-  background: {r: 0.3347827, g: 0.44705883, b: 0.30588236, a: 1}
-  deadZone: {r: 0.17176075, g: 0.23018861, b: 0.15765747, a: 1}
+  color: {r: 0.7798742, g: 0.61139196, b: 0.21826662, a: 1}
+  background: {r: 0.98039216, g: 0.76951003, b: 0.27450985, a: 1}
+  deadZone: {r: 0.40251565, g: 0.31631655, b: 0.115185216, a: 1}
 --- !u!1 &1997076008
 GameObject:
   m_ObjectHideFlags: 0
