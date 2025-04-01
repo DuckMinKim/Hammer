@@ -23,11 +23,13 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpPower;
     [SerializeField] float gravity;
-    [SerializeField] LoadImage ldImg;
+    LoadImage ldImg;
 
     float h, v, j;
     bool isGrounded;
     bool isPushing;
+    [SerializeField] float fallingTime;
+    float fallingCurrentTime;
 
     [SerializeField] AudioClip jumpClip;
     [SerializeField] AudioClip deadClip;
@@ -38,6 +40,9 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
 
+        fallingCurrentTime = fallingTime;
+        if (GameObject.Find("Load") != null)
+            ldImg = GameObject.Find("Load").GetComponent<LoadImage>();
     }
 
 
@@ -45,9 +50,24 @@ public class Player : MonoBehaviour
     {
         h = Input.GetAxisRaw("Horizontal");
 
-        if(h < 0 && moveSpeed >0) sr.flipX = true;
-        else if(h > 0 && moveSpeed > 0) sr.flipX = false;
+        if (h < 0 && moveSpeed > 0) sr.flipX = true;
+        else if (h > 0 && moveSpeed > 0) sr.flipX = false;
 
+
+        if (!isGrounded && fallingCurrentTime > 0)
+        {
+            fallingCurrentTime -= Time.deltaTime;
+        }
+        if (isGrounded)
+        {
+            fallingCurrentTime = fallingTime;
+            anim.SetBool("isFalling?", false);
+        }
+
+        if (fallingCurrentTime <= 0) {
+            fallingCurrentTime = 0;
+            anim.SetBool("isFalling?", true);
+        }
     }
 
 
@@ -55,7 +75,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
 
-        //isGrounded = Physics2D.OverlapCircle(transform.position + offset, groundCheckRadius, groundLayerMask);
         isGrounded = Physics2D.OverlapCapsule(transform.position + offset, groundCheckSize, CapsuleDirection2D.Horizontal,0, groundLayerMask);
         isPushing = Physics2D.OverlapCircle(transform.position + pushOffset * h, groundCheckRadius, groundLayerMask);
         
@@ -72,7 +91,7 @@ public class Player : MonoBehaviour
         }
         else if (isGrounded)
         {
-            j = -1;
+            j = 0;
             anim.SetBool("isGrounded?", true);
         }
         else
