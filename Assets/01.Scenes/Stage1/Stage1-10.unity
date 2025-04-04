@@ -195,7 +195,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0.6
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0db87fef882784f448b0b6e6c04b0ec3, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -555,6 +555,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1895819604585197580, guid: c6895594e428d0749b098d4e82c258bf, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: dd8791b2bb853d44fa05f8879ff3a771, type: 2}
     - target: {fileID: 5403125682011780859, guid: c6895594e428d0749b098d4e82c258bf, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1823,6 +1827,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5312843577205708869, guid: 2820f54689295824a93aef0e0feea972, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 0db87fef882784f448b0b6e6c04b0ec3, type: 2}
     - target: {fileID: 6467418201706460060, guid: 2820f54689295824a93aef0e0feea972, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -3255,6 +3263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box
       objectReference: {fileID: 0}
+    - target: {fileID: 5312843577205708869, guid: 2820f54689295824a93aef0e0feea972, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 0db87fef882784f448b0b6e6c04b0ec3, type: 2}
     - target: {fileID: 6467418201706460060, guid: 2820f54689295824a93aef0e0feea972, type: 3}
       propertyPath: m_LocalScale.x
       value: 3

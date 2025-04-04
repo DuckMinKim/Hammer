@@ -427,7 +427,7 @@ Transform:
   m_GameObject: {fileID: 201693930}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.57, y: -6.39, z: 0}
+  m_LocalPosition: {x: 14.4, y: -6.39, z: 0}
   m_LocalScale: {x: 1.4973725, y: 2.8929937, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -520,6 +520,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2840106971292787025, guid: b8ab0deb86ca3354b96cc04d49700d32, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 0db87fef882784f448b0b6e6c04b0ec3, type: 2}
     - target: {fileID: 4940408782265803230, guid: b8ab0deb86ca3354b96cc04d49700d32, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -530,7 +534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4940408782265803230, guid: b8ab0deb86ca3354b96cc04d49700d32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.08
+      value: 5.02
       objectReference: {fileID: 0}
     - target: {fileID: 4940408782265803230, guid: b8ab0deb86ca3354b96cc04d49700d32, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1858,8 +1862,8 @@ Transform:
   m_GameObject: {fileID: 1186327385}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.2337, y: -9.98, z: 0}
-  m_LocalScale: {x: 8.44617, y: 4.672644, z: 1}
+  m_LocalPosition: {x: 13.8964, y: -9.98, z: 0}
+  m_LocalScale: {x: 9.121019, y: 4.672644, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2378,8 +2382,8 @@ Transform:
   m_GameObject: {fileID: 1652876318}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.854, y: -9.98, z: 0}
-  m_LocalScale: {x: 11.172509, y: 4.672644, z: 1}
+  m_LocalPosition: {x: -12.546, y: -9.98, z: 0}
+  m_LocalScale: {x: 11.788114, y: 4.672644, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3003,6 +3007,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle
       objectReference: {fileID: 0}
+    - target: {fileID: 2840106971292787025, guid: b8ab0deb86ca3354b96cc04d49700d32, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 0db87fef882784f448b0b6e6c04b0ec3, type: 2}
     - target: {fileID: 4940408782265803230, guid: b8ab0deb86ca3354b96cc04d49700d32, type: 3}
       propertyPath: m_LocalScale.x
       value: 5

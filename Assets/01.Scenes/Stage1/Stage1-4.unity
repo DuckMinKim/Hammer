@@ -2861,6 +2861,10 @@ PrefabInstance:
       value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 5312843577205708869, guid: 2820f54689295824a93aef0e0feea972, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 0db87fef882784f448b0b6e6c04b0ec3, type: 2}
+    - target: {fileID: 5312843577205708869, guid: 2820f54689295824a93aef0e0feea972, type: 3}
       propertyPath: m_GravityScale
       value: 1
       objectReference: {fileID: 0}

@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -43755798084854360, guid: 6ad9b3aabc402114ca513ac100a964ac, type: 3}
-  m_Color: {r: 0.22352941, g: 0.23921569, b: 0.3372549, a: 1}
+  m_Color: {r: 0.21568628, g: 0.23137255, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -157,7 +157,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b82679b0c014d946811590ddb92b9a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -261,7 +261,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -5506283330082464814, guid: 6ad9b3aabc402114ca513ac100a964ac, type: 3}
-  m_Color: {r: 0.22352941, g: 0.23921569, b: 0.3372549, a: 1}
+  m_Color: {r: 0.21568628, g: 0.23137255, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -337,7 +337,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b82679b0c014d946811590ddb92b9a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -441,7 +441,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -6434043064548189717, guid: 6ad9b3aabc402114ca513ac100a964ac, type: 3}
-  m_Color: {r: 0.22352941, g: 0.23921569, b: 0.3372549, a: 1}
+  m_Color: {r: 0.21568628, g: 0.23137255, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -518,7 +518,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b82679b0c014d946811590ddb92b9a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -622,7 +622,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 2988799375980105856, guid: 6ad9b3aabc402114ca513ac100a964ac, type: 3}
-  m_Color: {r: 0.22352941, g: 0.23921569, b: 0.3372549, a: 1}
+  m_Color: {r: 0.21568628, g: 0.23137255, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -699,7 +699,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b82679b0c014d946811590ddb92b9a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -803,7 +803,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 8282134346573564327, guid: 6ad9b3aabc402114ca513ac100a964ac, type: 3}
-  m_Color: {r: 0.22352941, g: 0.23921569, b: 0.3372549, a: 1}
+  m_Color: {r: 0.21568628, g: 0.23137255, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -880,7 +880,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b82679b0c014d946811590ddb92b9a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -984,7 +984,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -221288875474489763, guid: 6ad9b3aabc402114ca513ac100a964ac, type: 3}
-  m_Color: {r: 0.22352941, g: 0.23921569, b: 0.3372549, a: 1}
+  m_Color: {r: 0.21568628, g: 0.23137255, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1061,7 +1061,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b82679b0c014d946811590ddb92b9a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1165,7 +1165,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 3832127134957137286, guid: 6ad9b3aabc402114ca513ac100a964ac, type: 3}
-  m_Color: {r: 0.22352941, g: 0.23921569, b: 0.3372549, a: 1}
+  m_Color: {r: 0.21568628, g: 0.23137255, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1242,7 +1242,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b82679b0c014d946811590ddb92b9a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1346,7 +1346,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -495215141973064099, guid: 6ad9b3aabc402114ca513ac100a964ac, type: 3}
-  m_Color: {r: 0.22352941, g: 0.23921569, b: 0.3372549, a: 1}
+  m_Color: {r: 0.21568628, g: 0.23137255, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1422,7 +1422,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b82679b0c014d946811590ddb92b9a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1568,7 +1568,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -6358608869827684446, guid: 6ad9b3aabc402114ca513ac100a964ac, type: 3}
-  m_Color: {r: 0.22352941, g: 0.23921569, b: 0.3372549, a: 1}
+  m_Color: {r: 0.21568628, g: 0.23137255, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1645,7 +1645,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b82679b0c014d946811590ddb92b9a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1749,7 +1749,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1060080713516089567, guid: 6ad9b3aabc402114ca513ac100a964ac, type: 3}
-  m_Color: {r: 0.22352941, g: 0.23921569, b: 0.3372549, a: 1}
+  m_Color: {r: 0.21568628, g: 0.23137255, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1826,7 +1826,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b82679b0c014d946811590ddb92b9a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1930,7 +1930,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1569933146601365554, guid: 6ad9b3aabc402114ca513ac100a964ac, type: 3}
-  m_Color: {r: 0.22352941, g: 0.23921569, b: 0.3372549, a: 1}
+  m_Color: {r: 0.21568628, g: 0.23137255, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2007,7 +2007,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b82679b0c014d946811590ddb92b9a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
