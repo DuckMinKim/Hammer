@@ -6,15 +6,16 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class SetColor : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    private Image image;
-    private Text text;
+    SpriteRenderer spriteRenderer;
+    Image image;
+    Text text;
 
     public enum ColodMod
     {
         Normal,
         Background,
-        DeadZone
+        DeadZone,
+        Glass
     }
 
     public ColodMod colodMod;
@@ -24,14 +25,18 @@ public class SetColor : MonoBehaviour
         image = GetComponent<Image>();
         text = GetComponent<Text>();
 
+    }
+
+    private void Start()
+    {
         switch (colodMod)
         {
             case ColodMod.Normal: ApplyColor(GameObject.Find("ColorManager").GetComponent<ColorManager>().color); break;
+            case ColodMod.Glass: ApplyColor(GameObject.Find("ColorManager").GetComponent<ColorManager>().glass); break;
             case ColodMod.Background: ApplyColor(GameObject.Find("ColorManager").GetComponent<ColorManager>().background); break;
             case ColodMod.DeadZone: ApplyColor(GameObject.Find("ColorManager").GetComponent<ColorManager>().deadZone); break;
             default: break;
         }
-
     }
 
     private void ApplyColor(Color newColor)

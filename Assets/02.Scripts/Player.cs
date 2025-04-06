@@ -6,9 +6,14 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D.IK;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    InputActionAsset inputActions;
+    InputAction moveAction;
+    InputAction jumpAction;
+
     Rigidbody2D rb2;
     Animator anim;
     SpriteRenderer sr;
@@ -25,7 +30,7 @@ public class Player : MonoBehaviour
     [SerializeField] float gravity;
     LoadImage ldImg;
 
-    float h, v, j;
+    float h, j;
     bool isGrounded;
     bool isPushing;
     [SerializeField] float fallingTime;
@@ -34,21 +39,33 @@ public class Player : MonoBehaviour
     [SerializeField] AudioClip jumpClip;
     [SerializeField] AudioClip deadClip;
 
-    void Start()
+    private void Awake()
     {
         rb2 = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
 
         fallingCurrentTime = fallingTime;
+    }
+
+    void Start()
+    {
         if (GameObject.Find("Load") != null)
             ldImg = GameObject.Find("Load").GetComponent<LoadImage>();
+
+        if(GameObject.Find("ControllerManager") != null)
+            inputActions = GameObject.Find("ControllerManager").GetComponent<ControllerManager>().inputActions;
+
+        moveAction = inputActions.FindActionMap("Player").FindAction("2DMove");
+        jumpAction = inputActions.FindActionMap("Player").FindAction("Jump");
     }
 
 
     void Update()
     {
-        h = Input.GetAxisRaw("Horizontal");
+        //h = Input.GetAxisRaw("Horizontal");
+        h = moveAction.ReadValue<float>();
+        
 
         if (h < 0 && moveSpeed > 0) sr.flipX = true;
         else if (h > 0 && moveSpeed > 0) sr.flipX = false;
@@ -80,7 +97,7 @@ public class Player : MonoBehaviour
         
         anim.SetBool("isPushing?", isPushing);
 
-        if (isGrounded && Input.GetButton("Jump"))
+        if (isGrounded && jumpAction.ReadValue<float>() != 0)
         {
             anim.SetBool("isGrounded?", true);
             anim.SetBool("isJump?", true);
@@ -104,7 +121,10 @@ public class Player : MonoBehaviour
         rb2.linearVelocity = new Vector2(h * moveSpeed, j * jumpPower);
     }
 
-
+    public void Restart(float waitTime)
+    {
+        StartCoroutine(RestartScene(waitTime));
+    }
 
     public IEnumerator RestartScene(float waitTime)
     {

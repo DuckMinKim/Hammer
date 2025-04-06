@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class LoadImage : MonoBehaviour
 {
     Animator anim;
-    void Start()
+    void Awake()
     {
         anim = GetComponent<Animator>();
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.U2D.IK;
 
 public class Clear : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class Clear : MonoBehaviour
             sceneIndex = nextSceneIndex;
         }else
             sceneIndex = 0;
+
+        if (ldImg == null)
+            ldImg = GameObject.Find("Load").GetComponent<LoadImage>();
     }
 
 
@@ -29,6 +33,8 @@ public class Clear : MonoBehaviour
         if(col != null && col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             SoundManager.Instance.PlaySound(clearClip);
+
+            
             ldImg.FadeOut();
             StartCoroutine(Wait(waitTime, sceneIndex));
 

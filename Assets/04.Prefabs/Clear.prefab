@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ldImg: {fileID: 0}
-  waitTime: 1
+  waitTime: 0.5
   clearClip: {fileID: 8300000, guid: b48c0e75c15613c45bb70760dff4a35e, type: 3}
 --- !u!114 &8939981227962099244
 MonoBehaviour:
