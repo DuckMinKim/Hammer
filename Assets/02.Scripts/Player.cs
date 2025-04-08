@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     SpriteRenderer sr;
 
     [SerializeField] LayerMask groundLayerMask;
+    [SerializeField] LayerMask DeadLayerMask;
 
     [SerializeField] Vector3 offset;
     [SerializeField] Vector3 pushOffset;
@@ -149,7 +150,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col != null && col.gameObject.layer == LayerMask.NameToLayer("DeadZone")) {
+        if (col != null && (DeadLayerMask & (1 << col.gameObject.layer)) != 0) {
             StartCoroutine(RestartScene(0.3f));
         }
     }

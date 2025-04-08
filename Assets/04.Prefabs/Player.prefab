@@ -108,6 +108,9 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 5440
+  DeadLayerMask:
+    serializedVersion: 2
+    m_Bits: 32896
   offset: {x: 0, y: -0.22, z: 0}
   pushOffset: {x: 0.53, y: 0, z: 0}
   groundCheckRadius: 0.15
