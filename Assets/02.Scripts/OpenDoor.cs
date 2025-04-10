@@ -1,87 +1,97 @@
 using UnityEngine;
-using UnityEngine.Rendering;
+using System.Collections;
 
 public class OpenDoor : MonoBehaviour
 {
     private enum Mode
     {
         Horizontal,
-        Vertical
+        Vertical,
+        Both
     }
-    private int step;
-    [SerializeField] private Mode useOpenSystem;
 
-    [SerializeField] private float doorOpeningTime;
-    [SerializeField] private float targetOpenAmount;
-    private float doorOpeningCurrentTime;
+    [SerializeField] private Mode useOpenSystem = Mode.Horizontal;
+
+    [SerializeField] private float doorOpeningTime = 2f;
+    [SerializeField] private float targetOpenAmount = 2f;
+    [SerializeField] private float targetOpenAmount_y;
+    [SerializeField] private float openDurationBeforeClose = 3f;
 
     [SerializeField] private GameObject leftDoor, rightDoor;
-    private Vector2 leftDoorPos, rightDoorPos;
+    [SerializeField] private float openSpeed;
+
+    private Vector3 leftDoorClosedPos, rightDoorClosedPos;
+    private Vector3 leftDoorOpenPos, rightDoorOpenPos;
+
+    private Coroutine moveCoroutine;
+
+    private void Awake()
+    {
+        if(leftDoor == null)
+        {
+            leftDoor = new GameObject();
+        }
+
+        if (rightDoor == null)
+        {
+            rightDoor = new GameObject();
+        }
+    }
 
     void Start()
     {
-        step = 0;
-        doorOpeningCurrentTime = 0;
+        leftDoorClosedPos = leftDoor.transform.position;
+        rightDoorClosedPos = rightDoor.transform.position;
 
-
-        leftDoorPos = leftDoor.transform.position;
-        rightDoorPos = rightDoor.transform.position;   
-    }
-
-
-    void Update()
-    {
-        switch (step)
+        if (useOpenSystem == Mode.Horizontal)
         {
-            case 1: {
-                    if (leftDoor.transform.position.x > leftDoorPos.x - targetOpenAmount)
-                    {
-                        leftDoor.transform.Translate(-1, 0, 0);
-                        rightDoor.transform.Translate(1, 0, 0);
-                    }
-                    else if (leftDoor.transform.position.x < leftDoorPos.x - targetOpenAmount)
-                    {
-                        leftDoor.transform.position = new(leftDoorPos.x - targetOpenAmount, leftDoor.transform.position.y);
-                        doorOpeningCurrentTime = doorOpeningTime;
-                    }
-                }; break;
-            case 2: {
-                    if (leftDoor.transform.position.x > leftDoorPos.x - targetOpenAmount)
-                    {
-                        leftDoor.transform.Translate(-1, 0, 0);
-                        rightDoor.transform.Translate(1, 0, 0);
-                    }
-                    else if (leftDoor.transform.position.x < leftDoorPos.x - targetOpenAmount)
-                    {
-                        leftDoor.transform.position = new(leftDoorPos.x - targetOpenAmount, leftDoor.transform.position.y);
-                        rightDoor.transform.position = new(rightDoor.x - targetOpenAmount, leftDoor.transform.position.y);
-                        doorOpeningCurrentTime = doorOpeningTime;
-                    }
-                }; break;
-            default: { }; break;
+            leftDoorOpenPos = leftDoorClosedPos + Vector3.left * targetOpenAmount;
+            rightDoorOpenPos = rightDoorClosedPos + Vector3.right * targetOpenAmount;
         }
-
-        
-
-
-        if (doorOpeningCurrentTime >= 0)
-            doorOpeningCurrentTime -= Time.deltaTime;
-
-        if(doorOpeningCurrentTime < 0)
+        else if(useOpenSystem == Mode.Vertical)// Vertical
         {
-            DoorClose();
-            doorOpeningCurrentTime = 0;
+            leftDoorOpenPos = leftDoorClosedPos + Vector3.down * targetOpenAmount;
+            rightDoorOpenPos = rightDoorClosedPos + Vector3.up * targetOpenAmount;
         }
-
+        else
+        {
+            leftDoorOpenPos = leftDoorClosedPos + Vector3.down * targetOpenAmount_y + Vector3.left * targetOpenAmount;
+            rightDoorOpenPos = rightDoorClosedPos + Vector3.up * targetOpenAmount_y + Vector3.right * targetOpenAmount;
+        }
     }
 
     public void DoorOpen()
     {
-        step = 1;
+        if (moveCoroutine != null) StopCoroutine(moveCoroutine);
+        moveCoroutine = StartCoroutine(MoveDoors(leftDoorOpenPos, rightDoorOpenPos));
+
+
+        Invoke(nameof(DoorClose), openDurationBeforeClose);
     }
 
     public void DoorClose()
     {
-        step = 2;
+        if (moveCoroutine != null) StopCoroutine(moveCoroutine);
+        moveCoroutine = StartCoroutine(MoveDoors(leftDoorClosedPos, rightDoorClosedPos));
+    }
+
+    private IEnumerator MoveDoors(Vector3 leftTarget, Vector3 rightTarget)
+    {
+        float elapsed = 0f;
+        Vector3 leftStart = leftDoor.transform.position;
+        Vector3 rightStart = rightDoor.transform.position;
+
+        while (elapsed < doorOpeningTime)
+        {
+            float t = elapsed / doorOpeningTime;
+            leftDoor.transform.position = Vector3.Lerp(leftStart, leftTarget, t);
+            rightDoor.transform.position = Vector3.Lerp(rightStart, rightTarget, t);
+
+            elapsed += Time.deltaTime * openSpeed;
+            yield return null;
+        }
+
+        leftDoor.transform.position = leftTarget;
+        rightDoor.transform.position = rightTarget;
     }
 }

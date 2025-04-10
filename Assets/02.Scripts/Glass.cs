@@ -10,7 +10,7 @@ public class Glass : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     public void Breaking()
@@ -19,4 +19,19 @@ public class Glass : MonoBehaviour
         brokenGlass.transform.localScale = transform.localScale;
         Destroy(gameObject);
     }
+
+    //public void ParticleBreaking()
+    //{
+    //    Instantiate(obj, transform.position, Quaternion.identity);
+    //    Destroy(gameObject);
+
+    //}
+
+    //private void OnCollisionEnter2D(Collision2D col)
+    //{
+    //    if (col != null && (breakableObject & (1 << col.gameObject.layer)) != 0 && isOnPlayer)
+    //    {
+    //        ParticleBreaking();
+    //    }
+    //}
 }

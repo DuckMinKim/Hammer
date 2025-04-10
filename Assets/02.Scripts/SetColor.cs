@@ -9,6 +9,7 @@ public class SetColor : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Image image;
     Text text;
+    ParticleSystem particle;
 
     public enum ColodMod
     {
@@ -24,7 +25,7 @@ public class SetColor : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         image = GetComponent<Image>();
         text = GetComponent<Text>();
-
+        particle = GetComponent<ParticleSystem>();
     }
 
     private void Start()
@@ -54,6 +55,12 @@ public class SetColor : MonoBehaviour
         if(text != null)
         {
             text.color = newColor;
+        }
+
+        if(particle != null)
+        {
+            var main = particle.main;
+            main.startColor = newColor;
         }
     }
 

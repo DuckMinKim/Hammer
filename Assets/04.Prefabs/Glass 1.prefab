@@ -149,6 +149,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 3480073320658754903, guid: 7a82b1f3fa89c2a4b80e1eee8e3d6ca9, type: 3}
+  isOnPlayer: 0
+  breakableObject:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &3430106483637558143
 MonoBehaviour:
   m_ObjectHideFlags: 0

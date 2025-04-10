@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] LayerMask groundLayerMask;
     [SerializeField] LayerMask DeadLayerMask;
+    [SerializeField] LayerMask MovingPlatform;
 
     [SerializeField] Vector3 offset;
     [SerializeField] Vector3 pushOffset;
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
     float h, j;
     bool isGrounded;
     bool isPushing;
+    Collider2D isOnPlatform;
     [SerializeField] float fallingTime;
     float fallingCurrentTime;
 
@@ -95,7 +97,8 @@ public class Player : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCapsule(transform.position + offset, groundCheckSize, CapsuleDirection2D.Horizontal,0, groundLayerMask);
         isPushing = Physics2D.OverlapCircle(transform.position + pushOffset * h, groundCheckRadius, groundLayerMask);
-        
+        isOnPlatform = Physics2D.OverlapCapsule(transform.position + offset + new Vector3(0,-0.2f,0), groundCheckSize, CapsuleDirection2D.Horizontal, 0, MovingPlatform);
+
         anim.SetBool("isPushing?", isPushing);
 
         if (isGrounded && jumpAction.ReadValue<float>() != 0)
@@ -120,6 +123,12 @@ public class Player : MonoBehaviour
         }
 
         rb2.linearVelocity = new Vector2(h * moveSpeed, j * jumpPower);
+
+
+        if (isOnPlatform != null)
+            transform.parent = isOnPlatform.gameObject.transform.GetChild(0).transform;
+        else
+            transform.parent = null;
     }
 
     public void Restart(float waitTime)
@@ -159,6 +168,5 @@ public class Player : MonoBehaviour
     {
         this.h = h;
     }
-    
-    
+
 }
