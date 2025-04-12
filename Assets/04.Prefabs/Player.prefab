@@ -107,10 +107,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 70976
+    m_Bits: 333120
   DeadLayerMask:
     serializedVersion: 2
-    m_Bits: 32896
+    m_Bits: 163968
   MovingPlatform:
     serializedVersion: 2
     m_Bits: 65536

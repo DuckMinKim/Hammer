@@ -22,8 +22,8 @@ TagManager:
   - PassBox
   - Thorn
   - MovingPlatform
-  - 
-  - 
+  - GlassIgnoreDeadzone
+  - Button
   - 
   - 
   - 

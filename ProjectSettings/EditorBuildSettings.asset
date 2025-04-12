@@ -80,6 +80,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01.Scenes/Stage2/Stage2-12.unity
     guid: 4548b4531a7da1544909841f3c3be01c
+  - enabled: 1
+    path: Assets/01.Scenes/Stage3/Stage3-1.unity
+    guid: eebd81c5f8e1fed46857f78707b0d975
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

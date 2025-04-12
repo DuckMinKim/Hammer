@@ -25,6 +25,7 @@ public class OpenDoor : MonoBehaviour
 
     private Coroutine moveCoroutine;
 
+
     private void Awake()
     {
         if(leftDoor == null)

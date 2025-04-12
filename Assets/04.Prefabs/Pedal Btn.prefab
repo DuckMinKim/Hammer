@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6990616637035623253}
   - component: {fileID: 7441375921209785746}
   - component: {fileID: 1973425812843980656}
-  m_Layer: 6
+  m_Layer: 18
   m_Name: Pedal Btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 3223352674197645481}
   - component: {fileID: 4146338462941219745}
   - component: {fileID: 6043209503002967988}
-  m_Layer: 6
+  m_Layer: 18
   m_Name: Pedal Btn (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
