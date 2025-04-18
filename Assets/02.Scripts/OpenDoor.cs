@@ -24,6 +24,10 @@ public class OpenDoor : MonoBehaviour
     private Vector3 leftDoorOpenPos, rightDoorOpenPos;
 
     private Coroutine moveCoroutine;
+    [SerializeField] GameObject gearTarget;
+    public float gearZ, gearCurrentZ;
+
+
 
 
     private void Awake()
@@ -58,6 +62,20 @@ public class OpenDoor : MonoBehaviour
         {
             leftDoorOpenPos = leftDoorClosedPos + Vector3.down * targetOpenAmount_y + Vector3.left * targetOpenAmount;
             rightDoorOpenPos = rightDoorClosedPos + Vector3.up * targetOpenAmount_y + Vector3.right * targetOpenAmount;
+        }
+
+
+        if(gearTarget != null)
+        {
+            gearZ = gearTarget.transform.eulerAngles.z;
+        }
+    }
+
+    private void Update()
+    {
+        if (gearTarget != null)
+        {
+            MenuallyMoveDoors();
         }
     }
 
@@ -109,5 +127,35 @@ public class OpenDoor : MonoBehaviour
         leftDoor.transform.position = leftTarget;
     if (rightDoor != null)
         rightDoor.transform.position = rightTarget;
+    }
+
+    private void MenuallyMoveDoors()
+    {
+        Rigidbody2D rb2Gear = gearTarget.GetComponent<Rigidbody2D>();
+
+        float angularVelocity = rb2Gear.angularVelocity; 
+
+        float rpm = Mathf.Abs(angularVelocity) / 360f * 60f;
+
+        leftDoor.transform.Translate(0, rpm / 100f * Time.deltaTime, 0);
+        rightDoor.transform.Translate(0, rpm / 100f * Time.deltaTime, 0);
+
+        //Debug.Log("회전 속도 (RPM): " + rpm);
+
+
+        //float t = 1;
+
+        //gearCurrentZ = (gearZ - gearTarget.transform.eulerAngles.z) / 100f;
+
+        //Vector3 leftTargetOffset = new(leftDoor.transform.position.x, gearCurrentZ, 0);
+        //Vector3 rightTargetOffset = new(rightDoor.transform.position.x, -gearCurrentZ, 0);
+
+        //Vector3 leftStart = leftDoor.transform.position;
+        //Vector3 rightStart = rightDoor.transform.position;
+
+        //leftDoor.transform.position = Vector3.Lerp(leftStart, leftTargetOffset, t);
+        ////Debug.Log("z 값: " + gearCurrentZ);
+        //rightDoor.transform.position = Vector3.Lerp(rightStart, -rightTargetOffset, t);
+
     }
 }
