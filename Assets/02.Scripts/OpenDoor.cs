@@ -79,32 +79,34 @@ public class OpenDoor : MonoBehaviour
         }
     }
 
-    public void DoorOpen()
+    public void DoorOpen(float waitTime)
     {
         if (moveCoroutine != null) StopCoroutine(moveCoroutine);
-        moveCoroutine = StartCoroutine(MoveDoors(leftDoorOpenPos, rightDoorOpenPos));
+        moveCoroutine = StartCoroutine(MoveDoors(leftDoorOpenPos, rightDoorOpenPos, waitTime));
 
 
         Invoke(nameof(DoorClose), openDurationBeforeClose);
     }
 
-    public void DoorJustOpen()
+    public void DoorJustOpen(float waitTime)
     {
         if (moveCoroutine != null) StopCoroutine(moveCoroutine);
-        moveCoroutine = StartCoroutine(MoveDoors(leftDoorOpenPos, rightDoorOpenPos));
+        moveCoroutine = StartCoroutine(MoveDoors(leftDoorOpenPos, rightDoorOpenPos, waitTime));
     }
 
     public void DoorClose()
     {
         if (moveCoroutine != null) StopCoroutine(moveCoroutine);
-        moveCoroutine = StartCoroutine(MoveDoors(leftDoorClosedPos, rightDoorClosedPos));
+        moveCoroutine = StartCoroutine(MoveDoors(leftDoorClosedPos, rightDoorClosedPos, 0));
     }
 
-    private IEnumerator MoveDoors(Vector3 leftTarget, Vector3 rightTarget)
+    private IEnumerator MoveDoors(Vector3 leftTarget, Vector3 rightTarget, float waitTime)
     {
 
         if (leftDoor == null || rightDoor == null)
             yield break;
+
+        yield return new WaitForSeconds(waitTime);
 
         float elapsed = 0f;
         Vector3 leftStart = leftDoor.transform.position;
