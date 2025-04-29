@@ -137,7 +137,7 @@ public class OpenDoor : MonoBehaviour
 
         float angularVelocity = rb2Gear.angularVelocity; 
 
-        float rpm = Mathf.Abs(angularVelocity) / 360f * 60f;
+        float rpm = Mathf.Abs(angularVelocity) / 360f * 60f * 10f;
 
         leftDoor.transform.Translate(0, rpm / 100f * Time.deltaTime, 0);
         rightDoor.transform.Translate(0, rpm / 100f * Time.deltaTime, 0);

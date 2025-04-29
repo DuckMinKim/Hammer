@@ -118,6 +118,7 @@ public class Hammer : MonoBehaviour
     }
     void Update()
     {
+
         Vector2 mouseRaw = Mouse.current.position.ReadValue();
         Vector2 moveInput = moveCursorAction.ReadValue<Vector2>();
 
@@ -140,7 +141,8 @@ public class Hammer : MonoBehaviour
 
         hammerIcon.position = AdjustMousePositionForSimulator(Input.mousePosition);
 
-        
+
+        transform.position = point;
 
         countText.text = "Count: " + count;
     }

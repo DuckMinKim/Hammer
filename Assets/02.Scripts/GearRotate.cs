@@ -26,4 +26,9 @@ public class GearRotate : MonoBehaviour
     {
         rb2.MoveRotation(rb2.rotation + rotateSpeed * Time.fixedDeltaTime);
     }
+
+    public void SetRotateSpeed(float speed)
+    {
+        rotateSpeed = speed;
+    }
 }
