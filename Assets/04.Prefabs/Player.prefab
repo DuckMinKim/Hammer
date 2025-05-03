@@ -114,10 +114,10 @@ MonoBehaviour:
   MovingPlatform:
     serializedVersion: 2
     m_Bits: 65536
-  offset: {x: 0, y: -0.22, z: 0}
+  offset: {x: 0, y: -0.2, z: 0}
   pushOffset: {x: 0.53, y: 0, z: 0}
   groundCheckRadius: 0.15
-  groundCheckSize: {x: 1.12, y: 0.7}
+  groundCheckSize: {x: 1.1, y: 0.7}
   moveSpeed: 8
   jumpPower: 5
   gravity: 15
@@ -289,6 +289,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.22}
-  m_Size: {x: 1.12, y: 0.7}
+  m_Offset: {x: 0, y: -0.19}
+  m_Size: {x: 1.1, y: 0.7}
   m_Direction: 1
