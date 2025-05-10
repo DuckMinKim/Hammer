@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 981303968719693668}
   - component: {fileID: 2228350050398880243}
   - component: {fileID: 795035387707821383}
+  - component: {fileID: 806986600618390729}
   m_Layer: 15
   m_Name: Thorn
   m_TagString: Untagged
@@ -106,7 +107,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b82679b0c014d946811590ddb92b9a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -116,7 +117,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!114 &2228350050398880243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 435500914e5d3bb458aac16b8ce2af49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colodMod: 0
+  colodMod: 2
 --- !u!60 &795035387707821383
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -180,3 +181,20 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &806986600618390729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546869287192863854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57359b829d972e41a28182eb8e93069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActivated: 0
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  raycastDistance: 10
