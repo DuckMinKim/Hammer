@@ -7,6 +7,7 @@ public class Thorn : MonoBehaviour
     [SerializeField] bool isActivated;
     [SerializeField] LayerMask playerLayerMask;
     [SerializeField] float raycastDistance;
+    [SerializeField] Vector3 offset;
 
     Vector2 pos;
     private void Awake()
@@ -30,7 +31,7 @@ public class Thorn : MonoBehaviour
 
     private void FixedUpdate()
     {
-        bool isRaycastPlayer = Physics2D.Raycast(transform.position, Vector2.down, raycastDistance, playerLayerMask);
+        bool isRaycastPlayer = Physics2D.Raycast(transform.position + offset, Vector2.down, raycastDistance, playerLayerMask);
 
         if (isRaycastPlayer)
         {
@@ -43,6 +44,6 @@ public class Thorn : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - raycastDistance));
+        Gizmos.DrawLine(transform.position + offset, new Vector2(transform.position.x + offset.x, transform.position.y + offset.y - raycastDistance));
     }
 }
