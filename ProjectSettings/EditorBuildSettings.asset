@@ -96,7 +96,7 @@ EditorBuildSettings:
     path: Assets/01.Scenes/Stage3/Stage3-5.unity
     guid: a5c6bfb10f167734e8edffc5e02d15ff
   - enabled: 1
-    path: Assets/01.Scenes/Stage3/Stage3-6.unity
+    path: Assets/01.Scenes/Stage3/Temporary Storage/Stage3-6T.unity
     guid: 32e463b712e1ee045a4221fbbb253bec
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

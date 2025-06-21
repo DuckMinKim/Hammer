@@ -31,4 +31,9 @@ public class GearRotate : MonoBehaviour
     {
         rotateSpeed = speed;
     }
+
+    public void FlipRotation()
+    {
+        rotateSpeed *= -1;
+    }
 }
