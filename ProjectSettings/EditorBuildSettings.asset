@@ -96,8 +96,26 @@ EditorBuildSettings:
     path: Assets/01.Scenes/Stage3/Stage3-5.unity
     guid: a5c6bfb10f167734e8edffc5e02d15ff
   - enabled: 1
-    path: Assets/01.Scenes/Stage3/Temporary Storage/Stage3-6T.unity
-    guid: 32e463b712e1ee045a4221fbbb253bec
+    path: Assets/01.Scenes/Stage3/Stage3-6.unity
+    guid: 2e5f465194e0e9f4a83ff1313443b619
+  - enabled: 1
+    path: Assets/01.Scenes/Stage3/Stage3-7.unity
+    guid: af192ed38d752df478b74c7ff63ec584
+  - enabled: 1
+    path: Assets/01.Scenes/Stage3/Stage3-8.unity
+    guid: 184c52cf0fa211c4c8cbbb2d2aaed63d
+  - enabled: 1
+    path: Assets/01.Scenes/Stage3/Stage3-9.unity
+    guid: bff6109917109c342a928af73eca6d3c
+  - enabled: 1
+    path: Assets/01.Scenes/Stage3/Stage3-10.unity
+    guid: 54f7f459ffe07444dbd02473bf0e1ebc
+  - enabled: 1
+    path: Assets/01.Scenes/Stage3/Stage3-11.unity
+    guid: ecd8e9aa5b7d9ad428a1796426be697a
+  - enabled: 1
+    path: Assets/01.Scenes/Stage3/Stage3-12.unity
+    guid: 656154bc6b57ff94c9739eeb76188e06
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
