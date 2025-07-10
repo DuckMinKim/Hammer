@@ -95,8 +95,10 @@ public class Hammer : MonoBehaviour
             GameObject _nail = Instantiate(nail, point, Quaternion.identity);
 
             if (testBox != null)
+            {
                 AttachBox(_nail, testBox);
-
+            }
+            
             count -= 1;
         }
 
