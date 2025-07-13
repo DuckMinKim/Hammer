@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using static UnityEngine.Rendering.DebugUI;
 public class Menu : MonoBehaviour
 {
     [SerializeField] LoadImage ldImg;
@@ -15,6 +16,8 @@ public class Menu : MonoBehaviour
     public InputActionAsset inputActions;
 
     private InputAction leftTriggerAction;
+
+    bool isClicked;
     void Start()
     {
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
@@ -24,6 +27,8 @@ public class Menu : MonoBehaviour
         }
         else
             sceneIndex = 0;
+
+        isClicked = false;
 
     }
 
@@ -79,19 +84,53 @@ public class Menu : MonoBehaviour
 
     public void PlayGame()
     {
-        SoundManager.Instance.PlaySound(clearClip);
+        if (isClicked)
+            return;
 
+        SoundManager.Instance.PlaySound(clearClip);
+        //Debug.Log(11);
 
         ldImg.FadeOut();
         StartCoroutine(Wait(waitTime, sceneIndex));
 
+        isClicked = true;
         //SceneManager.LoadScene(stageIndex);
     }
 
     public void ExitGame()
     {
+        if (isClicked)
+            return;
+
         ldImg.FadeOut();
         StartCoroutine(ExitGame(waitTime));
-        
+
+        isClicked = true;
+    }
+
+
+    public void PlayLevel(int selectedIndex)
+    {
+        if (isClicked)
+            return;
+
+        SoundManager.Instance.PlaySound(clearClip);
+
+        ldImg.FadeOut();
+        StartCoroutine(Wait(waitTime, selectedIndex));
+
+        isClicked = true;
+    }
+
+
+    public void OpenStagePanel(GameObject panel)
+    {
+        panel.SetActive(true);
+    }
+
+    public void CloseStagePanel(GameObject panel)
+    {
+
+        panel.SetActive(false);
     }
 }

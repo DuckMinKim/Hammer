@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D.IK;
 using UnityEngine.InputSystem;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -42,6 +43,8 @@ public class Player : MonoBehaviour
     [SerializeField] AudioClip jumpClip;
     [SerializeField] AudioClip deadClip;
 
+    public bool isDead; 
+
     private void Awake()
     {
         rb2 = GetComponent<Rigidbody2D>();
@@ -61,6 +64,8 @@ public class Player : MonoBehaviour
 
         moveAction = inputActions.FindActionMap("Player").FindAction("2DMove");
         jumpAction = inputActions.FindActionMap("Player").FindAction("Jump");
+
+        isDead = false;
     }
 
 
@@ -133,7 +138,11 @@ public class Player : MonoBehaviour
 
     public void Restart(float waitTime)
     {
-        StartCoroutine(RestartScene(waitTime));
+        if (!isDead)
+        {
+            StartCoroutine(RestartScene(waitTime));
+            isDead = true;
+        }
     }
 
     public IEnumerator RestartScene(float waitTime)

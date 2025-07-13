@@ -83,7 +83,7 @@ public class Hammer : MonoBehaviour
 
         if (col2d != null && fire1Action.ReadValue<float>() != 0 )
         {
-            if (col2d.TryGetComponent<Player>(out var player))
+            if (col2d.TryGetComponent<Player>(out var player) && !player.isDead)
             {
                 player.Restart(0.3f);
             }
